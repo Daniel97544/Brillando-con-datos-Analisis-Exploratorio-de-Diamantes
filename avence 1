@@ -1,0 +1,48 @@
+sns.set_style("whitegrid")
+
+# Create histograms for numerical variables: Price and Carat.
+# Histograms show the frequency distribution of a single numerical variable.
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
+sns.histplot(df['price'], kde=True, bins=50)
+plt.title('Distribution of Price')
+plt.xlabel('Price')
+plt.ylabel('Frequency')
+
+plt.subplot(1, 2, 2)
+sns.histplot(df['carat'], kde=True, bins=50)
+plt.title('Distribution of Carat')
+plt.xlabel('Carat')
+plt.ylabel('Frequency')
+
+plt.tight_layout()
+plt.show()
+
+# Create count plots for categorical variables: Cut, Color, and Clarity.
+# Count plots show the number of occurrences of each category in a categorical variable.
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 3, 1)
+# Order the categories by their frequency for better visualization.
+sns.countplot(x='cut', data=df, order=df['cut'].value_counts().index, palette='viridis')
+plt.title('Distribution of Cut')
+plt.xlabel('Cut')
+plt.ylabel('Count')
+
+plt.subplot(1, 3, 2)
+# Order the categories by their frequency for better visualization.
+sns.countplot(x='color', data=df, order=df['color'].value_counts().index, palette='viridis')
+plt.title('Distribution of Color')
+plt.xlabel('Color')
+plt.ylabel('Count')
+
+plt.subplot(1, 3, 3)
+# Order the categories by their frequency for better visualization.
+sns.countplot(x='clarity', data=df, order=df['clarity'].value_counts().index, palette='viridis')
+plt.title('Distribution of Clarity')
+plt.xlabel('Clarity')
+plt.ylabel('Count')
+
+plt.tight_layout()
+plt.show()
