@@ -1,0 +1,7 @@
+pandas==2.1.0
+matplotlib==3.8.0
+seaborn==0.12.3
+plotly==5.16.0
+numpy==1.26.0
+PySimpleGUI==4.72.0
+dash==2.13.0
